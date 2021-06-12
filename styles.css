@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+:root{
+  --orange: hsl(31, 77%, 52%);
+  --dark-cyan:  hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --light-gray:hsl(0, 0%, 95%);
+}
+
+.body{
+  margin: auto;
+  font-size: 15px;
+}
+
+.container{
+  max-width:850px;
+  border-radius:10px;
+  display:grid;
+  grid-template-columns: repeat(3, 33.3%);
+  grid-template-areas: "sedans suvs luxury";
+  overflow:hidden;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  margin: 4rem auto 4rem auto;
+  width: 80%;
+}
+
+.card{
+  color: var(--transparent-white);
+  font-family:  'Lexend Deca', sans-serif;
+  padding: 2rem;
+ }
+
+
+
+.card h2{
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: xx-large;
+  color: var(--light-gray);
+  text-transform: uppercase;
+}
+
+.card p{
+  margin-bottom: 4rem;
+  line-height: 150%;
+}
+
+.card button{
+  border-radius: 25px;
+  background: var(--light-gray);
+  text-align: center;
+  height: 3em;
+  padding:0 2em 0 2em;
+  margin:auto;
+  display: flex;
+  align-items: center;
+  border: var(--light-gray);
+}
+
+.card button:hover{
+  color: var(--light-gray);
+  border: var(--light-gray);
+  border-style: solid;
+  border-width: 2px;
+}
+
+
+.sedan{
+  grid-area: "sedans";
+  background-color: var(--orange);
+}
+.sedan button{
+  color: var(--orange);
+}
+
+.sedan button:hover{
+    background-color: var(--orange);
+}
+
+.suvs{
+  grid-area: "suvs";
+  background-color: var(--dark-cyan);
+}
+
+.suvs button{
+  color: var(--dark-cyan);
+}
+
+.suvs button:hover{
+    background-color: var(--dark-cyan);
+}
+
+
+.luxury{
+  grid-area: "luxury";
+  background-color: var(--very-dark-cyan);
+}
+
+.luxury button{
+  color: var(--very-dark-cyan);
+}
+
+.luxury button:hover{
+    background-color: var(--very-dark-cyan);
+}
+
+
+@media screen and (max-width:800px){
+  .container{
+    max-width: 250px;
+    grid-template-columns: auto;
+    grid-template-rows: repeate(3, auto);
+    grid-template-areas: 
+      "sedans"
+      "suvs"
+      "luxury";
+  }
+}
